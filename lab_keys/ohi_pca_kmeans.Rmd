@@ -28,7 +28,7 @@ ohi <- read_csv(here('data/ohi_scores_2021.csv')) %>%
 ```
 
 
-```{r, eval = FALSE}
+```{r}
 ohi_pca <- prcomp(ohi %>%
                     select(AO:TR),
                   scale = TRUE)
@@ -43,9 +43,10 @@ autoplot(ohi_pca,
          loadings.label.vjust = -0.5
 ) +
   theme_minimal() +
-  theme(legend.position = 'none') +
-  scale_color_brewer(palette = 'Dark2') +
-  scale_fill_brewer(palette = 'Dark2')
+  # theme(legend.position = 'none') +
+  scale_color_brewer(palette = 'Set1') +
+  # scale_fill_brewer(palette = 'Dark2') +
+  labs(color = 'Georegion')
 ```
 
 # Simplify to 3 OHI goals
